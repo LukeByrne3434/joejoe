@@ -24,4 +24,11 @@ public class hiresController {
 	public Hires getHires(@PathVariable String hid) {
 		return hs.getHireById(hid).get();
 	}
+	
+	@Validated(HiresPOSTValidations.class)
+	@PostMapping(path = "/add")
+		public String addHire(@Valid @RequestBody Hires hire) {
+			cs.save(hire);
+			return "ok";
+	}
 }
