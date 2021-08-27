@@ -20,4 +20,12 @@ public class hiresServices {
 	public Optional<Hires> getHireById(String hid) {
 		return hr.findByHid(hid);
 	}
+	
+	public void save(Hires hire) {
+		cr.save(hire);
+	}
+	
+	public void updateHire(String hid, String Hirescid h, String HiresVreg hvr) {
+		Optional<Hires> Hire = hr.findByHid(hid);
+	}
 }
